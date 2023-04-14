@@ -132,10 +132,16 @@ var isValid = function (s) {
 // }
 // If all assertions pass, then your solution will be accepted.
 
-var removeDuplicates = function (nums) {
+const removeDuplicates = function (nums) {
   let i = 0;
   for (let j = 0; j < nums.length; j++) {
     if (nums[j] != nums[i]) nums[++i] = nums[j];
   }
   return ++i;
+};
+
+//2nd variant
+
+const removeDuplicatesTwo = function (nums) {
+  nums.splice(0, nums.length, ...new Set(nums));
 };
