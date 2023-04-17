@@ -175,12 +175,7 @@ const haystack = "sadbutsad";
 const needle = "sad";
 
 const strStr = function (haystack, needle) {
-  const hayArr = haystack.split();
-  const nedArr = needle.split();
+  const hayArr = haystack.split(needle);
 
-  const firstIdx = hayArr.findIndex(nedArr[0]);
-  console.log(firstIdx);
+  return hayArr.length > 1 ? hayArr[0].length : -1;
 };
-
-strStr(haystack, needle);
-/* console.log(strStr(haystack, needle)); */
