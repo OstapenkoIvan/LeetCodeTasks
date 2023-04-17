@@ -4,7 +4,7 @@
 
 // You can return the answer in any order.
 
-var twoSum = function (nums, target) {
+const twoSum = function (nums, target) {
   for (let i = 0; i < nums.length; i++) {
     const secondVal = nums.indexOf(target - nums[i], i + 1);
     if (secondVal > 0) {
@@ -35,7 +35,7 @@ var twoSum = function (nums, target) {
 
 // Given a roman numeral, convert it to an integer.
 
-var romanToInt = function (s) {
+const romanToInt = function (s) {
   const vars = {
     I: 1,
     V: 5,
@@ -62,7 +62,7 @@ var romanToInt = function (s) {
 
 // If there is no common prefix, return an empty string "".
 
-var longestCommonPrefix = function (strs) {
+const longestCommonPrefix = function (strs) {
   if (!strs) {
     return "";
   }
@@ -86,7 +86,7 @@ var longestCommonPrefix = function (strs) {
 //   Open brackets must be closed in the correct order.
 //   Every close bracket has a corresponding open bracket of the same type.
 
-var isValid = function (s) {
+const isValid = function (s) {
   const stack = [];
 
   for (let i = 0; i < s.length; i++) {
@@ -156,10 +156,12 @@ const removeDuplicatesTwo = function (nums) {
 // Input: nums = [0,1,2,2,3,0,4,2], val = 2
 // Output: 5, nums = [0,1,4,0,3,_,_,_]
 
-while (nums.indexOf(val) >= 0) {
-  nums.splice(nums.indexOf(val), 1);
-}
-return nums.length;
+const removeDuplicatesThree = () => {
+  while (nums.indexOf(val) >= 0) {
+    nums.splice(nums.indexOf(val), 1);
+  }
+  return nums.length;
+};
 
 // 6. Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
@@ -168,3 +170,17 @@ return nums.length;
 
 // Input: haystack = "leetcode", needle = "leeto"
 // Output: -1
+
+const haystack = "sadbutsad";
+const needle = "sad";
+
+const strStr = function (haystack, needle) {
+  const hayArr = haystack.split();
+  const nedArr = needle.split();
+
+  const firstIdx = hayArr.findIndex(nedArr[0]);
+  console.log(firstIdx);
+};
+
+strStr(haystack, needle);
+/* console.log(strStr(haystack, needle)); */
