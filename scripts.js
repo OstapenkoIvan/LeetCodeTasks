@@ -175,6 +175,9 @@ const haystack = "sadbutsad";
 const needle = "sad";
 
 const strStr = function (haystack, needle) {
+  if (needle === "" || needle === haystack) return 0;
+  if (haystack.length < needle.length) return -1;
+
   const hayArr = haystack.split(needle);
 
   return hayArr.length > 1 ? hayArr[0].length : -1;
