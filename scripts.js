@@ -201,3 +201,38 @@ const strStrTwo = (haystack, needle) => {
 
   return -1;
 };
+
+// 7. Given an integer x, return true if x is a palindrome, and false otherwise.
+
+// Input: x = 121
+// Output: true
+
+// Input: x = -121
+// Output: false
+
+// Input: x = 10
+// Output: false
+
+const x = 12121;
+
+var isPalindrome = function (x) {
+  if (x < 0) return false;
+  if (x >= 0 && x < 10) return true;
+
+  const numStr = x.toString();
+  const testLength = Math.floor(numStr.length / 2);
+
+  let result;
+
+  for (let i = 0; i < testLength; i++) {
+    if (numStr[i] === numStr[numStr.length - 1 - i]) {
+      result = true;
+    } else {
+      return (result = false);
+    }
+  }
+
+  return result;
+};
+
+console.log(isPalindrome(x));
