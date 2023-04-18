@@ -213,26 +213,35 @@ const strStrTwo = (haystack, needle) => {
 // Input: x = 10
 // Output: false
 
-const x = 12121;
+const x = 122211;
 
-var isPalindrome = function (x) {
+// const isPalindrome = function (x) {
+// if (x < 0) return false;
+// if (x >= 0 && x < 10) return true;
+
+//   const numStr = x.toString();
+//   const testLength = Math.floor(numStr.length / 2);
+
+//   let result;
+
+//   for (let i = 0; i < testLength; i++) {
+//     if (numStr[i] === numStr[numStr.length - 1 - i]) {
+//       result = true;
+//     } else {
+//       return (result = false);
+//     }
+//   }
+
+//   return result;
+// };
+
+const isPalindrome = function (x) {
   if (x < 0) return false;
   if (x >= 0 && x < 10) return true;
 
-  const numStr = x.toString();
-  const testLength = Math.floor(numStr.length / 2);
+  const res = Number(x.toString().split("").reverse().join(""));
 
-  let result;
-
-  for (let i = 0; i < testLength; i++) {
-    if (numStr[i] === numStr[numStr.length - 1 - i]) {
-      result = true;
-    } else {
-      return (result = false);
-    }
-  }
-
-  return result;
+  return res == x ? true : false;
 };
 
 console.log(isPalindrome(x));
